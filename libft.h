@@ -6,14 +6,18 @@
 /*   By: lrocca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 14:47:55 by lrocca            #+#    #+#             */
-/*   Updated: 2021/01/12 16:51:28 by lrocca           ###   ########.fr       */
+/*   Updated: 2021/01/13 13:14:58 by lrocca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <string.h>
+# include <stdlib.h>
+# include <unistd.h>
+
+int		ft_isupper(int c);
+int		ft_islower(int c);
 
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
@@ -37,4 +41,5 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 void	*ft_calloc(size_t count, size_t size);
 
+void	ft_putstr_fd(char *s, int fd);
 #endif
