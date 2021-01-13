@@ -6,7 +6,7 @@
 /*   By: lrocca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 10:29:54 by lrocca            #+#    #+#             */
-/*   Updated: 2021/01/12 10:46:58 by lrocca           ###   ########.fr       */
+/*   Updated: 2021/01/13 17:05:26 by lrocca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,9 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	s = src;
 	d = dst;
-	while (n)
-	{
-		*d = *s;
-		d++;
-		s++;
-		n--;
-	}
+	if (!d && !s)
+		return (NULL);
+	while (n--)
+		*d++ = *s++;
 	return (dst);
 }

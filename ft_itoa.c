@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/12 10:58:32 by lrocca            #+#    #+#             */
-/*   Updated: 2021/01/13 17:31:09 by lrocca           ###   ########.fr       */
+/*   Created: 2021/01/13 11:51:30 by lrocca            #+#    #+#             */
+/*   Updated: 2021/01/13 17:29:11 by lrocca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_itoa(int n)
 {
-	size_t i;
+	int		i;
+	char	*s;
+	int		len;
+	int		nlen;
 
 	i = 0;
-	if (!dst && !src)
-		return (0);
-	if (dst > src)
-		while (len--)
-			*(unsigned char *)(dst + len) = *(unsigned char *)(src + len);
-	else
-		while (i < len)
-		{
-			*(unsigned char *)(dst + i) = *(unsigned char *)(src + i);
-			i++;
-		}
-	return (dst);
+	len = 0;
+	nlen = n;
+	if (n < 0)
+		nlen *= -1;
+	while (nlen > 0)
+	{
+		nlen /= 10;
+		len++;
+	}
+	if (n < 0)
+		len++;
+	if (!(s = (char *)malloc(len + 1)))
+		return (NULL);
+	while (n)
+	{
+		s[i] = n % 10;
+		i++;
+	}
+	return (s);
 }

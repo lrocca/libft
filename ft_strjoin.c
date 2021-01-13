@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/12 10:58:32 by lrocca            #+#    #+#             */
-/*   Updated: 2021/01/13 17:31:09 by lrocca           ###   ########.fr       */
+/*   Created: 2021/01/13 16:29:39 by lrocca            #+#    #+#             */
+/*   Updated: 2021/01/13 16:30:11 by lrocca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t i;
+	char	*ptr;
+	size_t	len;
+	size_t	i;
 
 	i = 0;
-	if (!dst && !src)
+	len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	if (!(ptr = malloc(len)))
 		return (0);
-	if (dst > src)
-		while (len--)
-			*(unsigned char *)(dst + len) = *(unsigned char *)(src + len);
-	else
-		while (i < len)
-		{
-			*(unsigned char *)(dst + i) = *(unsigned char *)(src + i);
-			i++;
-		}
-	return (dst);
+	ft_strlcpy(ptr, s1, len);
+	ft_strlcat(ptr, s2, len);
+	return (ptr);
 }
