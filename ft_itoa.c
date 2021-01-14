@@ -6,37 +6,50 @@
 /*   By: lrocca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 11:51:30 by lrocca            #+#    #+#             */
-/*   Updated: 2021/01/13 17:29:11 by lrocca           ###   ########.fr       */
+/*   Updated: 2021/01/14 19:07:11 by lrocca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+static int	ft_numlen(unsigned int n)
 {
-	int		i;
-	char	*s;
-	int		len;
-	int		nlen;
+	int len;
 
-	i = 0;
 	len = 0;
-	nlen = n;
-	if (n < 0)
-		nlen *= -1;
-	while (nlen > 0)
-	{
-		nlen /= 10;
-		len++;
-	}
-	if (n < 0)
-		len++;
-	if (!(s = (char *)malloc(len + 1)))
-		return (NULL);
+	if (n == 0)
+		return (1);
 	while (n)
 	{
-		s[i] = n % 10;
-		i++;
+		n /= 10;
+		len++;
 	}
-	return (s);
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	int				len;
+	char			*str;
+	int				sign;
+	unsigned int	nb;
+
+	sign = 1;
+	len = ft_numlen((unsigned int)n);
+	nb = n;
+	if (n < 0)
+	{
+		nb *= -1;
+		sign = 0;
+		len = ft_numlen(nb) + 1;
+	}
+	if (!(str = (char *)malloc(len + 1)))
+		return (0);
+	str[len] = 0;
+	if (!sign)
+		str[0] = '-';
+	str[--len] = '0' + (nb % 10);
+	while (nb /= 10)
+		str[--len] = '0' + (nb % 10);
+	return (str);
 }
