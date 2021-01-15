@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   .main.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 17:45:30 by lrocca            #+#    #+#             */
-/*   Updated: 2021/01/15 15:28:11 by lrocca           ###   ########.fr       */
+/*   Updated: 2021/01/15 23:46:25 by lrocca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ int	main(void)
 	// printf("sys: %d\nft:  %d\n", strncmp(s1, s2, n), ft_strncmp(s1, s2, n));
 
 	// ft_strlcpy
-	char *b = "ciaoasnwewe";
-	char c[10];
-	char d[10];
-	printf("sys: %zu\nmin: %zu\n", strlcpy(c, b, 0), ft_strlcpy(d, b, 0));
-	printf("src: %s\nsys: %s\nmin: %s\n", b, c, d);
+	// char *b = "Leonardo";
+	// char c[10];
+	// char d[10];
+	// printf("sys: %zu\nmin: %zu\n", strlcpy(c, b, 10), ft_strlcpy(d, b, 20));
+	// printf("src: %s\nsys: %s\nmin: %s\n", b, c, d);
 
 	// ft_memccpy
 	// char *s = "012345";
@@ -57,5 +57,4 @@ int	main(void)
 
 	// char **s = ft_split("    prima    seconda terza   quarta  ", ' ');
 	// for(int i = 0; s[i] != '\0'; i++) printf("%d\t%s\n", i, s[i]);
-
 }
