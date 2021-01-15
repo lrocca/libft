@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/11 15:37:07 by lrocca            #+#    #+#             */
-/*   Updated: 2021/01/15 20:54:05 by lrocca           ###   ########.fr       */
+/*   Created: 2021/01/15 20:45:44 by lrocca            #+#    #+#             */
+/*   Updated: 2021/01/15 20:50:40 by lrocca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	n;
-	int				sign;
+	size_t	i;
+	size_t	j;
 
-	n = 0;
-	sign = 1;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '+' || *str == '-')
+	i = 0;
+	j = 0;
+	while (s1[i + j] && (i + j) < n)
 	{
-		if (*str == '-')
-			sign = -1;
-		str++;
+		if (s2[j] == '\0')
+			return ((char *)s1 + i);
+		if (s1[i + j] != s2[j])
+		{
+			j = 0;
+			i++;
+		}
+		else
+			j++;
 	}
-	while (ft_isdigit(*str))
-	{
-		n = n * 10 + *str - '0';
-		str++;
-	}
-	if ((n == 2147483648 && sign == -1) || n <= 2147483647)
-		return (sign * n);
-	return (sign == 1 ? -1 : 0);
+	if ((!s1[i + j] && !s2[j]) || ((i + j) == n && !s2[j]))
+		return ((char *)s1 + i);
+	return (NULL);
 }
