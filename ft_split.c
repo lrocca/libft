@@ -6,7 +6,7 @@
 /*   By: lrocca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 22:10:43 by lrocca            #+#    #+#             */
-/*   Updated: 2021/01/15 22:25:10 by lrocca           ###   ########.fr       */
+/*   Updated: 2021/01/18 11:11:06 by lrocca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	ft_wcount(char const *s, char c)
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
 	size_t	i;
 	char	*start;

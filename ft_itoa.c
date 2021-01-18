@@ -6,7 +6,7 @@
 /*   By: lrocca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 11:51:30 by lrocca            #+#    #+#             */
-/*   Updated: 2021/01/14 19:07:11 by lrocca           ###   ########.fr       */
+/*   Updated: 2021/01/18 11:03:47 by lrocca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	ft_numlen(unsigned int n)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	int				len;
 	char			*str;
