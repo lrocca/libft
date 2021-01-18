@@ -6,7 +6,7 @@
 #    By: lrocca <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/11 16:55:45 by lrocca            #+#    #+#              #
-#    Updated: 2021/01/15 17:01:25 by lrocca           ###   ########.fr        #
+#    Updated: 2021/01/18 11:56:12 by lrocca           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,10 @@ BOBJ		=	$(BSRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
 bonus: $(OBJ) $(BOBJ)
-	ar rc $(NAME) $(OBJ) $(BOBJ)
+	ar rcs $(NAME) $(OBJ) $(BOBJ)
 
 clean:
 	rm -f $(OBJ) $(BOBJ)
