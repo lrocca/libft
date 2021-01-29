@@ -6,7 +6,7 @@
 /*   By: lrocca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 22:10:43 by lrocca            #+#    #+#             */
-/*   Updated: 2021/01/18 11:11:06 by lrocca           ###   ########.fr       */
+/*   Updated: 2021/01/24 19:38:46 by lrocca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,13 @@ static int	ft_wcount(char const *s, char c)
 	return (count);
 }
 
+char		**free_all(char **array)
+{
+	// free(strings) one by one
+	// free(array)
+	return (NULL);
+}
+
 char		**ft_split(char const *s, char c)
 {
 	size_t	i;
@@ -49,12 +56,12 @@ char		**ft_split(char const *s, char c)
 			while (*s && *s != c)
 				s++;
 			if (!(array[i] = malloc((s - start) + 1)))
-				return (NULL);
+				return (free_all(array));
 			ft_strlcpy(array[i++], start, s - start + 1);
 		}
 		else
 			s++;
 	}
-	array[i] = 0;
+	array[i] = '\0';
 	return (array);
 }
