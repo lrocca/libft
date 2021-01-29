@@ -6,7 +6,7 @@
 /*   By: lrocca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 16:50:25 by lrocca            #+#    #+#             */
-/*   Updated: 2021/01/15 20:48:25 by lrocca           ###   ########.fr       */
+/*   Updated: 2021/01/18 12:51:35 by lrocca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlcat(char *d, const char *s, size_t size)
 	while (i + 1 < size && *s)
 		d[i++] = *s++;
 	if (i < size)
-		d[i] = 0;
+		d[i] = '\0';
 	while (*s++)
 		i++;
 	return (i);

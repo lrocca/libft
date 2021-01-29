@@ -6,7 +6,7 @@
 /*   By: lrocca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 11:51:30 by lrocca            #+#    #+#             */
-/*   Updated: 2021/01/18 11:03:47 by lrocca           ###   ########.fr       */
+/*   Updated: 2021/01/18 15:16:31 by lrocca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char		*ft_itoa(int n)
 		len = ft_numlen(nb) + 1;
 	}
 	if (!(str = (char *)malloc(len + 1)))
-		return (0);
+		return (NULL);
 	str[len] = 0;
 	if (!sign)
 		str[0] = '-';
