@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_numlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/13 11:51:30 by lrocca            #+#    #+#             */
-/*   Updated: 2021/02/03 15:57:22 by lrocca           ###   ########.fr       */
+/*   Created: 2021/02/03 13:40:07 by lrocca            #+#    #+#             */
+/*   Updated: 2021/02/03 15:28:34 by lrocca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_itoa(int n)
+size_t	ft_numlen(unsigned long long n, int base)
 {
-	size_t			len;
-	char			*str;
-	int				sign;
-	unsigned int	nb;
+	size_t	len;
 
-	sign = 0;
-	len = ft_numlen((unsigned int)n, 10);
-	nb = n;
-	if (n < 0)
+	if (n == 0)
+		return (1);
+	len = 0;
+	while (n)
 	{
-		nb *= -1;
-		sign = 1;
-		len = ft_numlen(nb, 10) + 1;
+		n /= base;
+		len++;
 	}
-	if (!(str = malloc(len + 1)))
-		return (NULL);
-	str[len] = '\0';
-	if (sign)
-		str[0] = '-';
-	str[--len] = '0' + (nb % 10);
-	while (nb /= 10)
-		str[--len] = '0' + (nb % 10);
-	return (str);
+	return (len);
 }

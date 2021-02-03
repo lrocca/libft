@@ -18,6 +18,7 @@
 
 int				ft_isupper(int c);
 int				ft_islower(int c);
+size_t			ft_numlen(unsigned long long n, int base);
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
