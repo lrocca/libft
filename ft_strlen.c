@@ -6,7 +6,7 @@
 /*   By: lrocca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 15:55:08 by lrocca            #+#    #+#             */
-/*   Updated: 2021/01/11 17:28:52 by lrocca           ###   ########.fr       */
+/*   Updated: 2021/02/03 13:43:12 by lrocca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@ size_t	ft_strlen(const char *s)
 	size_t	len;
 
 	len = 0;
-	while (*s)
-	{
-		len++;
-		s++;
-	}
+	if (s)
+		while (*s)
+		{
+			len++;
+			s++;
+		}
 	return (len);
 }
