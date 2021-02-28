@@ -6,7 +6,7 @@
 /*   By: lrocca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 14:47:55 by lrocca            #+#    #+#             */
-/*   Updated: 2021/02/23 18:40:05 by lrocca           ###   ########.fr       */
+/*   Updated: 2021/02/28 15:06:03 by lrocca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 int				ft_isupper(int c);
 int				ft_islower(int c);
 int				ft_isspace(int c);
+int				ft_ischarset(int c, char *s);
 size_t			ft_numlen(unsigned long long n, int base);
 char			*ft_utoa_base(unsigned long long n, char *radix);
 
