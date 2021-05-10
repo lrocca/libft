@@ -6,35 +6,37 @@
 /*   By: lrocca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 11:51:30 by lrocca            #+#    #+#             */
-/*   Updated: 2021/02/03 15:57:22 by lrocca           ###   ########.fr       */
+/*   Updated: 2021/05/10 16:18:43 by lrocca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	size_t			len;
-	char			*str;
-	int				sign;
-	unsigned int	nb;
+	size_t	len;
+	char	*str;
+	int		sign;
 
 	sign = 0;
-	len = ft_numlen((unsigned int)n, 10);
-	nb = n;
+	len = 0;
 	if (n < 0)
 	{
-		nb *= -1;
+		n *= -1;
 		sign = 1;
-		len = ft_numlen(nb, 10) + 1;
+		len++;
 	}
-	if (!(str = malloc(len + 1)))
+	len += ft_numlen((unsigned int)n, 10);
+	str = malloc(len + 1);
+	if (!str)
 		return (NULL);
-	str[len] = '\0';
+	str[len--] = '\0';
 	if (sign)
 		str[0] = '-';
-	str[--len] = '0' + (nb % 10);
-	while (nb /= 10)
-		str[--len] = '0' + (nb % 10);
+	while (len + 1 > (size_t)sign)
+	{
+		str[len--] = '0' + (n % 10);
+		n /= 10;
+	}
 	return (str);
 }

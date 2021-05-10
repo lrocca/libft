@@ -6,7 +6,7 @@
 /*   By: lrocca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 16:13:18 by lrocca            #+#    #+#             */
-/*   Updated: 2021/01/18 11:06:45 by lrocca           ###   ########.fr       */
+/*   Updated: 2021/05/08 18:59:00 by lrocca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	ft_isset(char c, char const *set)
 	return (0);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
 	char	*start;
@@ -36,7 +36,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 	while (start < end && ft_isset(*(end - 1), set))
 		end--;
 	len = end - start + 1;
-	if (!(str = malloc(len)))
+	str = malloc(len);
+	if (!str)
 		return (NULL);
 	ft_strlcpy(str, start, len);
 	return (str);
