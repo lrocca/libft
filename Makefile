@@ -6,7 +6,7 @@
 #    By: lrocca <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/11 16:55:45 by lrocca            #+#    #+#              #
-#    Updated: 2021/05/10 17:52:23 by lrocca           ###   ########.fr        #
+#    Updated: 2021/05/11 15:48:32 by lrocca           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,8 @@ SRC			=	ft_atoi.c \
 				ft_putnbr_fd.c \
 				ft_putstr_fd.c \
 				ft_split.c \
+				ft_splitset_bonus.c \
+				ft_splitspace_bonus.c \
 				ft_strchr.c \
 				ft_strdup.c \
 				ft_strjoin.c \

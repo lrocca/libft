@@ -6,7 +6,7 @@
 /*   By: lrocca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 14:47:55 by lrocca            #+#    #+#             */
-/*   Updated: 2021/05/08 18:30:38 by lrocca           ###   ########.fr       */
+/*   Updated: 2021/05/11 15:48:18 by lrocca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int				ft_isspace(int c);
 int				ft_ischarset(int c, char *s);
 size_t			ft_numlen(unsigned long long n, int base);
 char			*ft_utoa_base(unsigned long long n, char *radix);
+char			**ft_splitset(const char *s, const char *c);
+char			**ft_splitspace(const char *s);
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
