@@ -6,7 +6,7 @@
 /*   By: lrocca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 14:47:55 by lrocca            #+#    #+#             */
-/*   Updated: 2021/05/11 15:48:18 by lrocca           ###   ########.fr       */
+/*   Updated: 2021/05/15 20:05:06 by lrocca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ size_t			ft_numlen(unsigned long long n, int base);
 char			*ft_utoa_base(unsigned long long n, char *radix);
 char			**ft_splitset(const char *s, const char *c);
 char			**ft_splitspace(const char *s);
+int				ft_strcmp(const char *s1, const char *s2);
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
