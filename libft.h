@@ -6,7 +6,7 @@
 /*   By: lrocca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 14:47:55 by lrocca            #+#    #+#             */
-/*   Updated: 2021/05/15 20:05:06 by lrocca           ###   ########.fr       */
+/*   Updated: 2021/05/25 18:56:40 by lrocca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <sys/errno.h>
 
 int				ft_isupper(int c);
 int				ft_islower(int c);
