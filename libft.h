@@ -6,7 +6,7 @@
 /*   By: lrocca <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 14:47:55 by lrocca            #+#    #+#             */
-/*   Updated: 2021/05/25 18:56:40 by lrocca           ###   ########.fr       */
+/*   Updated: 2021/09/24 13:15:19 by lrocca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <sys/errno.h>
 
+int				ft_abs(int n);
 int				ft_isupper(int c);
 int				ft_islower(int c);
 int				ft_isspace(int c);
