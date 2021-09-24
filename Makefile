@@ -6,14 +6,15 @@
 #    By: lrocca <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/11 16:55:45 by lrocca            #+#    #+#              #
-#    Updated: 2021/05/15 20:05:43 by lrocca           ###   ########.fr        #
+#    Updated: 2021/09/24 13:26:27 by lrocca           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	libft.a
 CC			=	gcc
 CFLAGS		=	-Wall -Werror -Wextra
-SRC			=	ft_atoi.c \
+SRC			=	ft_abs.c \
+				ft_atoi.c \
 				ft_bzero.c \
 				ft_calloc.c \
 				ft_isalnum.c \
